@@ -44,7 +44,6 @@ if (isset($_POST['submit'])) {
     $campo_estado = $_POST['Estado'];
     $campo_endereco = $_POST['Endereço'];
 
-    // Validar e limpar os dados (evitando injeção de SQL)
     $customer_name = mysqli_real_escape_string($conexao, $customer_name);
     $email_address = mysqli_real_escape_string($conexao, $email_address);
     $phone_number = mysqli_real_escape_string($conexao, $phone_number);
@@ -54,7 +53,7 @@ if (isset($_POST['submit'])) {
     $campo_estado = mysqli_real_escape_string($conexao, $campo_estado);
     $campo_endereco = mysqli_real_escape_string($conexao, $campo_endereco);
 
-    // Inserir dados diretamente na consulta (vulnerável a injeção de SQL, apenas para fins didáticos)
+    
     $query = "INSERT INTO cliente (nome, email, telefone, cep, data_nasc, cidade, estado, Endereco) 
               VALUES ('$customer_name', '$email_address', '$phone_number', '$campo_CEP', '$data_nasc', '$campo_cidade', '$campo_estado', '$campo_endereco')";
 
