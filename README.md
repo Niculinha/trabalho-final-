@@ -1,7 +1,7 @@
 # Back-end-trabalho-final
 
 Bom, na parte back-end decidimos utilizar a linguagem PHP, que faz a interação com o banco de dados que usamos chamado MySql Workbench.
-Nesse banco de dados armazenamos todos os cadastros do formulario do nosso site. (com o uso do XAMPP)
+Nesse banco de dados armazenamos todos os cadastros do formulario do nosso site. Com o uso do XAMPP
 
 Codigo usado na parte back-end : 
 
