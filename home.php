@@ -2,7 +2,6 @@
 if (isset($_POST['submit'])) {
     include_once('config.php');
 
-    // Verificar a conexão
     if (!$conexao) {
         die("Conexão falhou: " . mysqli_connect_error());
     }
@@ -30,17 +29,17 @@ if (isset($_POST['submit'])) {
     $query = "INSERT INTO cliente (nome, email, telefone, cep, data_nasc, cidade, estado, Endereco) 
               VALUES ('$customer_name', '$email_address', '$phone_number', '$campo_CEP', '$data_nasc', '$campo_cidade', '$campo_estado', '$campo_endereco')";
 
-    // Executar a consulta
+    
     $result = mysqli_query($conexao, $query);
 
-    // Verificar se a consulta foi bem-sucedida
+    
     if ($result) {
         echo "Registro inserido com sucesso!";
     } else {
         echo "Erro ao inserir registro: " . mysqli_error($conexao);
     }
 
-    // Fechar a conexão
+    
     mysqli_close($conexao);
 }
 ?>
@@ -128,7 +127,7 @@ if (isset($_POST['submit'])) {
       </div>
     </div>
   </fieldset>
-  <!-- Adicione os atributos name nos outros campos do formulário -->
+  
   <fieldset>
     <div class="input-group">
       <label for="phone_number">Telefone: </label>
