@@ -1,8 +1,7 @@
 <?php
 if (isset($_POST['submit'])) {
-    include_once('receita.php'); // Certifique-se de que o arquivo config.php está correto e contém as credenciais do banco de dados.
-
-    // Verificar a conexão
+    include_once('receita.php'); 
+    
     if (!$conexao) {
         die("Conexão falhou: " . mysqli_connect_error());
     }
@@ -19,14 +18,14 @@ if (isset($_POST['submit'])) {
     $result = mysqli_query($conexao, "INSERT INTO usuarios (nome, email, telefone, sexo, data_nasc, cidade, estado, endereco) 
     VALUES ('$nome', '$email', '$telefone', '$genero', '$data_nasc', '$cidade', '$estado', '$endereco')");
 
-    // Verificar se a consulta foi bem-sucedida
+   
     if ($result) {
         echo "Registro inserido com sucesso!";
     } else {
         echo "Erro ao inserir registro: " . mysqli_error($conexao);
     }
 
-    // Fechar a conexão
+
     mysqli_close($conexao);
 }
 ?>
